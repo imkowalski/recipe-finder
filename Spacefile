@@ -1,0 +1,14 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: recipe-finder
+    src: ./
+    engine: python3.9
+    primary: true
+    run: gunicorn main:app
+    dev: python dev.py
+    public_routes:
+          - "/"
+          - "/recipe/*" 
+          - "/search"
+          - "/static/*"

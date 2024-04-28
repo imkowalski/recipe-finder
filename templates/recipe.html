@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"
+        integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div class="conteiner margin">
+        <div class="row">
+            <input class="columns twelve box" type="text" placeholder="Search A Recipe" id="search">
+        </div>
+        <div class="row">
+            <div style="display:none" class="columns twelve search" id="search-results">
+
+            </div>
+        </div>
+    </div>
+    <script src="/static/search.js"></script>
+    <div class="conteiner margin">
+        <div class="row">
+            <div class="columns twelve box">
+                <h1 class="name">
+                    {{get.name}}
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+
+
+            <div class="columns three box" id="ingredients">
+                <p style="display: none;" id="ing-text">{{get.ingredients}}</p>
+                <script>
+
+                    let converter = new showdown.Converter()
+                    text = $('#ing-text').text();
+                    html = converter.makeHtml(text);
+                    $('#ingredients').html(html);
+                </script>
+            </div>
+            <div class="columns nine box" id="instructions">
+                <p style="display: none;" id="ins-text">{{get.instructions}}</p>
+            </div>
+            <script>
+                text = $('#ins-text').text();
+                html = converter.makeHtml(text);
+                $('#instructions').html(html);
+            </script>
+        </div>
+        <div class="row">
+            <div class="columns three box" id="translate">
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'en'}, 'translate');
+                    }
+                    </script>
+            </div>
+            <div class="columns nine box" id="get-recipe">Recipe from: <a href="{{get.source}}">{{get.source}}</a></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

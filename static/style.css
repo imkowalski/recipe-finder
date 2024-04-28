@@ -1,0 +1,78 @@
+
+
+:root {
+    --border-color: #464646;
+}
+
+@font-face {
+    font-family: MapleMono;
+    src: url(MapleMono-NF.ttf);
+}
+
+body,
+html {
+    font-family: MapleMono;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+#search {
+    font-size: 2rem;
+}
+
+.margin {
+    margin: 2vw;
+}
+.name {
+    padding: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+.box {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    width: 100%;
+    height: inherit;
+    background-color: white;
+    padding: 1rem;
+}
+.search {
+    padding: 1rem;
+    background-color: #ffffffbb;
+    border: #525252 2px solid;
+    border-radius: 5px;
+    padding-left: 1rem;
+    width: 100px;
+    z-index: 2;
+}
+input[type="text"] {
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    background-color: white;
+}
+input[type="text"]:focus {
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    background-color: white;
+}
+textarea {
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    background-color: white;
+    resize: vertical;
+    min-height: 60vh;
+}
+textarea:focus {
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    background-color: white;
+}
+img {
+    max-width: 100%;
+    width: auto;
+    max-width: 30rem;
+    border-radius: 5px;
+}

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify, redirect
 from deta import Deta
 
-deta = Deta("a0ypM8dHbfP8_ojywdboDHeq4Xcr1WsH7YwY6QKGivTr3")
+deta = Deta("DETA_SPACE_KEY")
 
 db = deta.Base('recipes')
 
